@@ -1,6 +1,6 @@
 const express = require("express");
 require("dotenv").config();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT;
 const host = process.env.HOST;
 
 const cors = require("cors");
@@ -12,7 +12,6 @@ app.use(express.json());
 app.use(cors({ origin: "*" }));
 app.use("/", Route);
 
-app.get("/", (req, res) => {});
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("dygnify/build"));
 
