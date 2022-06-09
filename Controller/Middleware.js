@@ -21,16 +21,25 @@ exports.ValidationPersonal = (req, res, next) => {
     } else if (i === 3) {
       if (
         req.body[checkinput[i]] === undefined ||
-        /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/.test(req.body[checkinput[i]])
+        /^[a-z A-Z 0-9+_.-]+@[a-z A-Z 0-9.-]+$/.test(req.body[checkinput[i]])
       ) {
         res.json({ messeage: ` provide valid ${checkinput[i]}` });
         break;
       }
-    } else if (i === 5 || i === 6) {
+    } else if (i === 5) {
       if (
         req.body[checkinput[i]] === undefined ||
         req.body[checkinput[i]] === "" ||
         /[^0-9]/.test(req.body[checkinput[i]])
+      ) {
+        res.json({ messeage: ` provide valid ${checkinput[i]}` });
+        break;
+      }
+    } else if (i === 6) {
+      if (
+        req.body[checkinput[i]] === undefined ||
+        req.body[checkinput[i]] === "" ||
+        /[0-9]{0,10}/.test(req.body[checkinput[i]])
       ) {
         res.json({ messeage: ` provide valid ${checkinput[i]}` });
         break;
@@ -63,7 +72,7 @@ exports.ValidationBusiness = (req, res, next) => {
     } else if (i === 3) {
       if (
         req.body[checkinput[i]] === undefined ||
-        /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/.test(req.body[checkinput[i]])
+        /^[a-z A-Z 0-9+_.-]+@[a-z A-Z 0-9.-]+$/.test(req.body[checkinput[i]])
       ) {
         res.json({ messeage: ` provide valid ${checkinput[i]}` });
         break;
