@@ -39,11 +39,11 @@ exports.ValidationPersonal = (req, res, next) => {
       if (
         req.body[checkinput[i]] === undefined ||
         req.body[checkinput[i]] === "" ||
-        (/[^0-9]/.test(req.body[checkinput[i]]) &&
-          !(
-            req.body[checkinput[i]].toString().length <= 10 &&
-            req.body[checkinput[i]].toString().length >= 10
-          ))
+        /[^0-9]/.test(req.body[checkinput[i]]) ||
+        !(
+          req.body[checkinput[i]].toString().length <= 10 &&
+          req.body[checkinput[i]].toString().length >= 10
+        )
       ) {
         res.json({ messeage: ` provide valid ${checkinput[i]}` });
         break;
