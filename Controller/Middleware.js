@@ -106,7 +106,7 @@ exports.ValidationLoan = (req, res, next) => {
     "loan_tenure",
     "interest_rate",
   ];
-  for (let i = 0; i < checkinput.length; i++) {
+  for (let i = 0; i < checkinput.length + 1; i++) {
     if (i < 3) {
       if (
         req.body[checkinput[i]] === undefined ||
@@ -117,6 +117,7 @@ exports.ValidationLoan = (req, res, next) => {
         break;
       }
     } else if (i >= 3 && i < 7) {
+      console.log(checkinput[i]);
       if (
         req.body[checkinput[i]] === undefined ||
         req.body[checkinput[i]] === "" ||

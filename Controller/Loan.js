@@ -1,6 +1,7 @@
 const loanData = require("../Modules/Loan");
 
 exports.loan = (req, res) => {
+  console.log(req.body);
   const loaninfo = new loanData({
     loan_type: req.body.loan_type,
     loan_amount: req.body.loan_amount,
@@ -13,6 +14,7 @@ exports.loan = (req, res) => {
   loaninfo
     .save()
     .then((response) => {
+      console.log(response);
       res
         .status(200)
         .json({ data: response, messeage: " data saved successfully" });

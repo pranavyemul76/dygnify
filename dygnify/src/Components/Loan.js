@@ -24,6 +24,7 @@ function Loan() {
     })
       .then((res) => {
         setmessege(res.data.messeage);
+        console.log(res.data.messeage);
       })
       .catch((error) => {
         console.log(error);
