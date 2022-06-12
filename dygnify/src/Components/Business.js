@@ -9,7 +9,7 @@ function Business() {
 
     setmessege(false);
     axios({
-      url: "/business",
+      url: "http://localhost:8080/business",
       method: "POST",
       data: {
         firstname: businessData.Firstname,
@@ -47,14 +47,6 @@ function Business() {
             </div>
           )}
           <div>
-            <div
-              style={{
-                marginLeft: "10px",
-                marginBottom: "10px",
-              }}
-            >
-              Business Owner Details
-            </div>
             <div className={Styles.inputlayout}>
               <label>firstname</label>
               <input

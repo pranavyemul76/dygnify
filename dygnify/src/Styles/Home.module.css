@@ -9,11 +9,11 @@ h3{
 }
 input[type="submit"]{
     border: 1px solid orange;
-    margin-left: 40%;
+    
 }
 form{
     padding: 30px 10px 100px 10px;
-    margin: auto;
+  
 }
 .formslayout{
   width: 40%;
@@ -25,7 +25,7 @@ form{
 }
 .inputlayout{
     display: inline-block;
-    width: 48%;
+    width: 47%;
     margin-left: 10px;
 }
 body {

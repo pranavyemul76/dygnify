@@ -9,7 +9,7 @@ const Personal = () => {
 
     setmessege(false);
     axios({
-      url: "/personal",
+      url: "http://localhost:8080/personal",
       method: "POST",
       data: {
         firstname: personalData.FirstName,
@@ -69,7 +69,7 @@ const Personal = () => {
             <div className={Styles.inputlayout}>
               <label>Age</label>
               <input
-                type="Number"
+                type="text"
                 className="form-control"
                 id="age"
                 name="age"
